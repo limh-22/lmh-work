@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 800px;
+    height: 800px;
+    background-color: red;
+}
+#one{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: blue;
+}

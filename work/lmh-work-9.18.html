@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="int1" />+
+		<input type="text" id="int2" />
+		<button id="btn">计算</button>
+		<div id="show"></div>
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+            btn.onclick=function (){
+            	 if(isNaN(int1.value)==true){
+                alert('框内必须输入数字')
+            }else if(isNaN(int2.value)==true){
+                alert('框内必须输入数字')
+            }
+            show.innerHTML = parseInt(Number(int1.value))+parseInt(Number(int2.value));
+            }
+       </script>
+	</body>
+</html>
