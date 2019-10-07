@@ -331,6 +331,11 @@ img{
 	margin-top: 80px;
 	margin-left: 60px;
 }
+#three img{
+	width: 400px;
+	height: 260px;
+	margin: 0 auto;
+}
 #three div{
 	width: 470px;
 	height: 490px;
