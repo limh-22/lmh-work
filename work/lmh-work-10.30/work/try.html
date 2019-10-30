@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../jquery-1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        li{
+            list-style: none;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin:10px;
+            background-color: aqua;
+        }
+        .divs{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 10px;
+            border: none;
+            background-color: rgb(114, 185, 170);
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="div">
+        
+        <ul>
+            <li></li>
+            <li style="background-color: rgb(206, 148, 196)"></li>
+            <li style="background-color: rgb(62, 82, 75)"></li>
+            <li style="background-color: rgb(49, 106, 116)"></li>
+            <li style="background-color: rgb(60, 22, 75)"></li>
+            <li style="background-color: rgb(202, 211, 163)"></li>
+            <li style="background-color: rgb(241, 171, 106)"></li>
+            <li style="background-color: rgb(211, 108, 113)"></li>
+        </ul>
+        <div id="divs" class="divs"></div>
+    </div>
+    <script>
+        
+        $("li:nth-child(1)").click(function(){
+            $("body").css("background-color","aqua");
+            $("sdiv").css("background-color","aqua");
+        })
+        $("li:nth-child(2)").click(function(){
+            $("body").css("background-color","rgb(206, 148, 196)");
+            $("sdiv").css("background-color","rgb(206, 148, 196)");
+        })
+        $("li:nth-child(3)").click(function(){
+            $("body").css("background-color","rgb(62, 82, 75)");
+            $("sdiv").css("background-color","rgb(62, 82, 75)");
+        })
+       
+        $("li:nth-child(4)").click(function(){
+            $("body").css("background-color","rgb(49, 106, 116)");
+            $("sdiv").css("background-color","rgb(49, 106, 116)");
+        })
+        $("li:nth-child(5)").click(function(){
+            $("body").css("background-color","rgb(60, 22, 75)");
+            $("sdiv").css("background-color","rgb(60, 22, 75)");
+        })
+        $("li:nth-child(6)").click(function(){
+            $("body").css("background-color","rgb(202, 211, 163)");
+            $("sdiv").css("background-color","rgb(202, 211, 163)");
+        })
+        $("li:nth-child(7)").click(function(){
+            $("body").css("background-color","rgb(241, 171, 106)");
+            $("sdiv").css("background-color","rgb(241, 171, 106)");
+        })
+        $("li:nth-child(8)").click(function(){
+            $("body").css("background-color","rgb(211, 108, 113)");
+            $("sdiv").css("background-color","rgb(211, 108, 113)");
+        })
+        // $("li").hide();
+        var $a=0;
+        $("#div").click(function(){
+            $a++;
+            if($a%2==0){
+                $("li").hide("slow");
+            }else{
+                $("li").show("slow");
+            }
+        })
+    </script>
+</body>
+</html>
