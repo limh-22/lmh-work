@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../jquery-1.10.2/jquery.js"></script>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <td>手机型号</td>
+            <td>数量</td>
+            <td>单价</td>
+            <td>合计</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id="ch1">华为mate20：</td>
+            <td><input type="number" id="num1" value="1"></td>
+            <td>￥9999</td>
+            <td><b id="yuan1"></b>元</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id="ch2">小米8：</td>
+            <td><input type="number" id="num2" value="1"></td>
+            <td>￥555</td>
+            <td><b id="yuan2"></b>元</td>
+        </tr>
+        <tr>
+            <td colspan="4" style="text-align: center;">
+                 <p id="money">共需付费:</p>
+            </td>
+        </tr>
+    </table>
+    <script>
+
+        var a = 0;
+        var b = 0;
+        $('#yuan1').html($('#num1').val() * 9999);
+        $('#num1').change(function () {
+            $('#yuan1').html($('#num1').val() * 9999);
+            if (a == 1 && b == 1) {
+                $('#money').html(Number($('#yuan1').html()) + Number($('#d2').html()));
+            } else if (a == 1 && b == 0) {
+                $('#money').html(Number($('#yuan1').html()));
+            } else if (b == 1 && a == 0) {
+                $('#money').html(Number($('#yuan2').html()));
+            } else {
+                $('#money').html('0');
+            }
+        })
+        $('#yuan2').html($('#num2').val() * 555);
+        $('#num2').change(function () {
+            $('#yuan2').html($('#num2').val() * 555);
+            if (a == 1 && b == 1) {
+                $('#money').html(Number($('#yuan1').html()) + Number($('#d2').html()));
+            } else if (a == 1 && b == 0) {
+                $('#money').html(Number($('#yuan1').html()));
+            } else if (b == 1 && a == 0) {
+                $('#money').html(Number($('#yuan2').html()));
+            } else {
+                $('#money').html('0');
+            }
+        })
+        $('#ch1').click(function () {
+            if (a == 0) {
+                a = 1
+            } else {
+                a = 0
+            }
+            if (a == 1 && b == 1) {
+                $('#money').html(Number($('#yuan1').html()) + Number($('#yuan2').html()));
+            } else if (a == 1 && b == 0) {
+                $('#money').html(Number($('#yuan1').html()));
+            } else if (b == 1 && a == 0) {
+                $('#money').html(Number($('#yuan2').html()));
+            } else {
+                $('#money').html('0');
+            }
+        })
+        $('#ch2').click(function () {
+            if (b == 0) {
+                b = 1
+            } else {
+                b = 0
+            }
+            if (a == 1 && b == 1) {
+                $('#money').html(Number($('#yuan1').html()) + Number($('#yuan2').html()));
+            } else if (a == 1 && b == 0) {
+                $('#money').html(Number($('#yuan1').html()));
+            } else if (b == 1 && a == 0) {
+                $('#money').html(Number($('#yuan2').html()));
+            } else {
+                $('#money').html('0');
+            }
+        })
+    </script>
+</body>
+
+</html>
