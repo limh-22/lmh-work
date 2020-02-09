@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+	<div class="wrap">
+		<div class="center" id="centers">
+			<div class="top clearFloat">
+				<div class="zhen" id="zhen"></div>
+				<div class="pan clearFloat" id="pans">
+					<div class="stop"></div>
+				</div>
+				<div class="leg">
+					<ul>
+						<li id="heart"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<!-- ************* -->
+				<div class="tiao clearFloat">
+					<span><a href="#" id="dian"></a></span>
+				</div>
+				<!-- ************ -->
+			</div>
+			<div class="foot clearFloat">
+				<ul>
+					<li id="player"></li>
+					<li id="lt"><a href="#"></a></li>
+					<li id="ruan"><a href="#"></a></li>
+					<li id="rt"><a href="#"></a></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+	<audio src="" id="ad" controls="controls">
+		浏览器版本过低
+	</audio>
+	<script type="text/javascript">
+		var ruan = document.getElementById('ruan');
+		var player = document.getElementById('player');
+		var heart = document.getElementById('heart');
+		var a = 1;
+		heart.onclick = function () {
+
+			if (a == 1) {
+				heart.style.backgroundImage = 'url(img/shoucang.png)';
+				a = 0;
+			} else {
+				heart.style.backgroundImage = 'url(img/hot.png)';
+				a = 1;
+			}
+		}
+		player.onclick = function () {
+			player.style.backgroundImage = "url(img/suiji.png)";
+			player.onclick = function () {
+				player.style.backgroundImage = "url(img/danqu.png)";
+			};
+		};
+		var b = 1;
+
+		var zhen = document.getElementById('zhen');
+		var pans = document.getElementById('pans');
+		var dian = document.getElementById('dian');
+		var audios = document.getElementById('audios');
+		var ad = document.getElementById('ad');
+		ad.src = 'audio/' + e + '.mp3'
+		ad.play();
+		pans.style.animation = "none";
+		zhen.style.transformOrigin = "left top";
+		zhen.style.transform = "rotate(-25deg)";
+		ruan.onclick = function () {
+			if (a == 1) {
+				pans.style.animation = "sb 5s linear infinite";
+				ruan.style.backgroundImage = "url(img/pause.png)";
+				dian.style.marginLeft = "290px";
+				zhen.style.transformOrigin = "left top";
+				zhen.style.transform = "rotate(1deg)";
+				ad.src = 'audio/' + e + '.mp3'
+				ad.play();
+				a = 0;
+			} else {
+				pans.style.animation = "none";
+				ruan.style.backgroundImage = "url(img/play.png)";
+				dian.style.marginLeft = "0px";
+				zhen.style.transform = "rotate(-25deg)";
+				ad.src = 'audio/' + e + '.mp3'
+				ad.pause();
+				a = 1;
+
+
+			}
+		}
+		// b=1
+		var c = 1;
+		var d = 1;
+		// e=3
+		var p = 1;
+		var e = 1;
+
+
+		var rt = document.getElementById('rt');
+		var centers = document.getElementById('centers');
+		var pans = document.getElementById('pans');
+		if (c == 1) {
+			rt.onclick = function () {
+				ruan.style.backgroundImage = "url(img/play.png)";
+				pans.style.animation = "none";
+				dian.style.marginLeft = "0px";
+				pans.style.transform = "transition: 1s linear;"
+				centers.style.backgroundImage = "url('img/bg" + d + ".jpg')";
+				d++;
+				pans.style.backgroundImage = "url('img/disc" + p + ".png')"
+				p++;
+				ad.src = 'audio/' + e + '.mp3'
+				e++;
+				console.log(d, p, e);
+				if (e >= 6 || e == 0) {
+					e = 1;
+					if (p >= 6 || p == 0) {
+						p = 1;
+						if (d >= 6 || p == 0) {
+							d = 1;
+						}
+					}
+				}
+			}
+		}
+		var f = 1;
+		var d = 6;
+		// e=3
+		var p = 6;
+		var e = 6;
+		var lt = document.getElementById('lt');
+		if (f == 1) {
+			lt.onclick = function () {
+				ruan.style.backgroundImage = "url(img/play.png)";
+				pans.style.animation = "none";
+				dian.style.marginLeft = "0px";
+				pans.style.transform = "transition: 1s linear;"
+				centers.style.backgroundImage = "url('img/bg" + d + ".jpg')";
+				d--;
+				pans.style.backgroundImage = "url('img/disc" + p + ".png')"
+				p--;
+				ad.src = 'audio/' + e + '.mp3'
+				e--;
+				console.log(d, p, e);
+				if (e <= 1 || e > 6) {
+					e = 5;
+					if (p <= 1 || p > 6) {
+						p = 5;
+						if (d <= 1 || d > 6) {
+							d = 5;
+						}
+					}
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>
